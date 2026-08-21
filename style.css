@@ -124,7 +124,7 @@ main {
 
 .field-group input:hover,
 .field-group select:hover {
-  border-color: #9ca3af;
+  border-color: #73737b;
 }
 
 /* Inline validation error message — Requirements 1.4, 8.5 */
@@ -326,4 +326,8 @@ main {
 .btn-delete:focus-visible,
 .transaction-category:focus-visible {
   border-radius: calc(var(--radius) / 2);
+}
+
+body {
+  background: rgb(68, 244, 65) !important;
 }

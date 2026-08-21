@@ -66,6 +66,7 @@ flowchart TD
 
 Pure functions; no DOM access. Returns a structured result object so the UI layer can display per-field messages.
 
+{% raw %}
 ```js
 /**
  * @typedef {{ valid: boolean, errors: { name?: string, amount?: string, category?: string } }} ValidationResult
@@ -192,6 +193,7 @@ const NotificationService = {
   error(message) { /* ... */ },
 };
 ```
+{% endraw %}
 
 ### 8. HTML Structure (`index.html`)
 

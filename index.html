@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense &amp; Budget Visualizer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Expense &amp; Budget Visualizer</h1>
+    <section id="balance-section">
+      <span id="balance-display">$0.00</span>
+    </section>
+  </header>
+
+  <main>
+    <!-- Left column: Input Form -->
+    <section id="form-section">
+      <form id="input-form" novalidate>
+        <div class="field-group">
+          <label for="field-name">Item Name</label>
+          <input id="field-name" type="text" maxlength="100"
+                 placeholder="e.g. Coffee" autocomplete="off" required />
+          <span id="error-name" class="error-msg" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="field-amount">Amount</label>
+          <input id="field-amount" type="text" inputmode="decimal"
+                 placeholder="0.00" autocomplete="off" required />
+          <span id="error-amount" class="error-msg" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="field-group">
+          <label for="field-category">Category</label>
+          <select id="field-category" required>
+            <option value="">-- Select category --</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+          </select>
+          <span id="error-category" class="error-msg" role="alert" aria-live="polite"></span>
+        </div>
+
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <!-- Right column: Chart -->
+    <section id="chart-section">
+      <canvas id="chart-canvas"></canvas>
+      <p id="chart-placeholder" hidden>No data available</p>
+    </section>
+  </main>
+
+  <section id="transaction-section">
+    <ul id="transaction-list" role="list"></ul>
+    <p id="list-placeholder">No transactions yet.</p>
+  </section>
+
+  <div id="notification-area" aria-live="polite"></div>
+
+  <!-- Chart.js from CDN — must load before app.js; sets flag on failure for graceful degradation -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"
+          onerror="window.__chartJsFailed = true"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
